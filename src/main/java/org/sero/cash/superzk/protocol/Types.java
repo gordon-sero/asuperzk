@@ -718,12 +718,12 @@ public class Types {
 	}
 
 	public static class GTx {
-		public BigInteger Gas;
-		public BigInteger GasPrice;
+		public String Gas;
+		public String GasPrice;
 		public T Tx;
 		public byte[] Hash;
 
-		public GTx(BigInteger gas, BigInteger gasPrice, T tx, byte[] hash) {
+		public GTx(String gas, String gasPrice, T tx, byte[] hash) {
 			Gas = gas;
 			GasPrice = gasPrice;
 			Tx = tx;

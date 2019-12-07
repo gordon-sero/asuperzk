@@ -10,6 +10,7 @@ import org.sero.cash.superzk.crypto.ecc.Point;
 import org.sero.cash.superzk.protocol.czero.Czero;
 import org.sero.cash.superzk.protocol.superzk.Account;
 import org.sero.cash.superzk.protocol.superzk.SuperZk;
+import org.sero.cash.superzk.util.HexUtils;
 
 public class Sign {
 
@@ -53,7 +54,7 @@ public class Sign {
 		genOutsP(ctx);
 		genSign(ctx);
 
-		return new Types.GTx(param.Gas, param.GasPrice, ctx.s, ctx.s.toHash());
+		return new Types.GTx(HexUtils.toHex(param.Gas), HexUtils.toHex(param.GasPrice), ctx.s, ctx.s.toHash());
 	}
 
 	private static void check(Types.GTxParam param) {
